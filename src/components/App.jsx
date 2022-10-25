@@ -1,13 +1,12 @@
-import { forwardRef, useRef, useEffect } from 'react';
-
-const CustomButton = forwardRef((props, ref) => (
-  <button ref={ref}>{props.children}</button>
-));
+import React from 'react';
 
 export const App = () => {
-  const btnRef = useRef();
-
-  useEffect(() => btnRef.current.focus(), []);
-
-  return <CustomButton ref={btnRef}>Button with forwarded ref</CustomButton>;
+  return (
+    <>
+      <form>
+        <input type="text" name="username" />
+        <button type="submit">Search</button>
+      </form>
+    </>
+  );
 };
